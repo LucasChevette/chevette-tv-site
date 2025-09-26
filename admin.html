@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Painel Admin — Chevette TV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* pequenas customizações só para admin */
+    .admin-wrap{max-width:1100px;margin:40px auto;padding:20px}
+    .panel{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,.04);box-shadow:var(--shadow);margin-bottom:18px}
+    .field{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+    .field input,.field select,.field textarea{flex:1;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.06);background:transparent;color:var(--text)}
+    .small-btn{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+    .list-item{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.03)}
+    .danger{background:#ff5a5a;color:white}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <img src="assets/logo.png" alt="Chevette TV" class="logo" />
+      <h3 style="margin:0;color:var(--muted)">Painel Admin</h3>
+    </div>
+  </header>
+
+  <div class="admin-wrap">
+    <div id="login-panel" class="panel">
+      <h3>Login</h3>
+      <div class="field">
+        <input id="admin-password" type="password" placeholder="Senha do painel (troque depois)" />
+        <button id="admin-login" class="small-btn btn">Entrar</button>
+      </div>
+      <p class="muted">Senha padrão: <strong>chevette123</strong> (mude depois no código ou armazene em servidor)</p>
+    </div>
+
+    <div id="dashboard" style="display:none">
+      <div class="panel">
+        <h3>Planos</h3>
+        <div id="plans-list"></div>
+        <hr/>
+        <h4>Adicionar / Editar Plano</h4>
+        <div class="field">
+          <input id="plan-id" placeholder="ID (deixe vazio para novo)" />
+          <input id="plan-name" placeholder="Nome (ex: Mensal)" />
+          <input id="plan-price" placeholder="Preço (ex: 25.00)" />
+          <input id="plan-duration" placeholder="Duração (ex: 1 mês / 3 meses)" />
+        </div>
+        <div class="field">
+          <textarea id="plan-desc" placeholder="Descrição curta"></textarea>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button id="save-plan" class="small-btn btn">Salvar Plano</button>
+          <button id="clear-plan" class="small-btn btn">Limpar</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Depoimentos</h3>
+        <div id="testimonials-list"></div>
+        <hr/>
+        <div class="field">
+          <input id="testi-name" placeholder="Nome" />
+          <input id="testi-text" placeholder="Depoimento" />
+          <button id="add-testi" class="small-btn btn">Adicionar</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Cupons</h3>
+        <div id="coupons-list"></div>
+        <hr/>
+        <div class="field">
+          <input id="coupon-code" placeholder="Código (ex: LIPINHO)" />
+          <input id="coupon-percent" placeholder="Desconto % (ex: 10)" />
+          <input id="coupon-uses" placeholder="Limite de uso (0 = ilimitado)" />
+          <input id="coupon-expire" placeholder="Expira em (YYYY-MM-DD) (opcional)" />
+          <button id="add-coupon" class="small-btn btn">Criar Cupom</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Promoções</h3>
+        <div id="promos-list"></div>
+        <hr/>
+        <div class="field">
+          <select id="promo-plan-select"></select>
+          <input id="promo-percent" placeholder="Desconto % (ex: 15)" />
+          <input id="promo-end" placeholder="Termina em (YYYY-MM-DDTHH:MM) — exemplo 2025-09-25T23:59" />
+          <button id="add-promo" class="small-btn btn">Criar Promoção</button>
+        </div>
+      </div>
+
+      <div style="text-align:right;margin-top:10px">
+        <button id="export-data" class="small-btn btn">Exportar dados (JSON)</button>
+        <button id="import-data" class="small-btn btn">Importar dados (colar JSON)</button>
+        <button id="reset-data" class="small-btn btn danger">Resetar tudo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

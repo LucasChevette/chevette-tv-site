@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chevette TV — Central de entretenimento</title>
+  <meta name="description" content="Chevette TV — sua central de entretenimento sem travar e sem anúncios.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Fontes e CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <img src="assets/logo.png" alt="Chevette TV" class="logo" />
+      <div>
+        <p class="slogan">Sua central de entretenimento</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container hero-wrap">
+        <div class="hero-text">
+          <h1>Chevette TV</h1>
+          <p class="lead">Filmes, séries, esportes e muito mais em <strong>Full HD &amp; 4K</strong>.<br/>Todos os planos já incluem <strong>2 telas simultâneas</strong>.</p>
+          <div class="cta">
+            <a class="btn trial-btn" href="#teste">Teste Grátis 4h</a>
+            <a class="btn whatsapp" id="contact-whatsapp" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn instagram" href="https://instagram.com/chevette_tv" target="_blank" rel="noopener">Instagram</a>
+          </div>
+          <ul class="hero-bullets">
+            <li>Sem anúncios</li>
+            <li>Suporte rápido via WhatsApp</li>
+          </ul>
+        </div>
+
+        <aside class="hero-card glass">
+          <div class="pill">Conteúdos em alta qualidade</div>
+          <h3>Assista do seu jeito</h3>
+          <p class="muted">Conecte e aproveite em múltiplos dispositivos, com estabilidade e qualidade.</p>
+          <a class="btn" href="#planos">Ver Planos</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Aparelhos Compatíveis -->
+    <section class="compatibilidade" id="compatibilidade">
+      <div class="container">
+        <h2>Aparelhos Compatíveis</h2>
+        <div class="grid compat-grid">
+          <div class="compat-card">
+            <div class="icon">📱</div>
+            <h3>Celulares</h3>
+            <p>Android, iOS (iPhone, iPad)</p>
+          </div>
+          <div class="compat-card">
+            <div class="icon">📺</div>
+            <h3>Smart TVs</h3>
+            <p>Samsung, LG, TCL, Philips, AOC, Philco, Panasonic, Roku TV</p>
+          </div>
+          <div class="compat-card">
+            <div class="icon">📦</div>
+            <h3>TV Box</h3>
+            <p>Fire Stick, Mi Box, Chromecast, Apple TV</p>
+          </div>
+          <div class="compat-card">
+            <div class="icon">💻</div>
+            <h3>Computadores</h3>
+            <p>Windows, macOS, Linux</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section class="planos" id="planos">
+      <div class="container">
+        <h2>Planos e valores</h2>
+        <div style="max-width:760px;margin:0 auto 18px;display:flex;gap:10px;align-items:center;justify-content:center;">
+          <input id="coupon-input" type="text" placeholder="Tem um cupom? Digite aqui" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);min-width:220px" />
+          <button id="apply-coupon" class="btn ghost">Aplicar</button>
+          <button id="clear-coupon" class="btn ghost" style="display:none">Remover</button>
+        </div>
+        <div class="grid pricing" id="plans-container">
+          <!-- preenchido pelo JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="depoimentos" id="depoimentos">
+      <div class="container">
+        <h2>O que dizem nossos clientes</h2>
+        <div class="grid depo-grid" id="testimonials-container"></div>
+      </div>
+    </section>
+
+    <!-- Teste Grátis -->
+    <section class="teste" id="teste">
+      <div class="container">
+        <div class="trial-banner glass">
+          <div class="trial-left">
+            <div class="badge">NOVO</div>
+            <h2>Teste grátis por 4 horas</h2>
+            <p class="muted">Peça um teste pelo WhatsApp e experimente.</p>
+            <ul class="trial-list">
+              <li>Acesso completo durante 4h</li>
+              <li>Sem cartão e sem burocracia</li>
+              <li>Ativação rápida pelo WhatsApp</li>
+            </ul>
+            <div class="cta">
+              <a class="btn whatsapp" id="trial-whatsapp" href="#" target="_blank" rel="noopener">Pedir teste no WhatsApp</a>
+              <a class="btn ghost" href="#faq">Ver como funciona</a>
+            </div>
+          </div>
+          <div class="trial-right">
+            <div class="trial-card card">
+              <div class="trial-pill">Acesso temporário</div>
+              <div class="trial-time" id="trial-time">04:00:00</div>
+              <p class="muted small">Cronômetro ilustrativo. O tempo oficial começa quando o acesso for liberado pelo suporte.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2>Perguntas Frequentes</h2>
+        <details open>
+          <summary>Como funciona o teste grátis de 4h?</summary>
+          <p>É simples: clique em <strong>Pedir teste no WhatsApp</strong>, informe seu dispositivo e o suporte libera um acesso temporário válido por 4 horas.</p>
+        </details>
+        <details>
+          <summary>Preciso de internet rápida?</summary>
+          <p>Recomendamos pelo menos 15 Mb de internet estável para melhor experiência.</p>
+        </details>
+        <details>
+          <summary>Posso assistir em celular e TV?</summary>
+          <p>Sim, funciona em Smart TV, celular, TV Box e computador.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="plan-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <h3 id="modal-plan-title">Confirmar Assinatura</h3>
+        <p id="modal-plan-desc" class="muted"></p>
+        <div style="display:flex;gap:12px;align-items:center;margin:12px 0">
+          <div>
+            <strong>Preço:</strong> <span id="modal-price">R$ 0,00</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:12px">
+          <button class="btn ghost" id="modal-cancel">Cancelar</button>
+          <a id="modal-whatsapp" class="btn whatsapp" href="#" target="_blank" rel="noopener">Pagar / Assinar via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <img src="assets/logo.png" class="logo-footer" alt="Chevette TV" />
+      <p>© 2025 Chevette TV – Todos os direitos reservados.</p>
+      <nav class="footer-links">
+        <a href="https://instagram.com/chevette_tv" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5575991078689" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante WhatsApp -->
+  <a id="float-whatsapp" class="float-whatsapp" href="https://wa.me/5575991078689" target="_blank" rel="noopener" title="Chamar no WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
