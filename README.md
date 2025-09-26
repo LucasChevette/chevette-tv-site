@@ -28,3 +28,9 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 ---
 
 ## 📂 Estrutura do repositório
+
+chevette-tv-site/
+├── index.html # Página principal
+├── style.css # Estilos globais
+├── script.js # Funções e interatividade
+└── assets/ # Imagens, ícones e mídias
