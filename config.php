@@ -1,6 +1,16 @@
 <?php
-// Configurações. NÃO compartilhe este arquivo.
+declare(strict_types=1);
+
+// Configuração pública: não armazene segredos neste arquivo.
 const SESSION_NAME = 'chv_sess';
-// Chave usada UMA vez para criar sua senha em admin.php (depois de criada a senha, ela não é mais usada).
-// Se quiser, troque por outra chave sua, com 16+ caracteres.
-const SETUP_KEY = 'sR74T-XfgGmDTQOAUzMA0Sea';
+
+// A chave de instalação deve ficar em config.local.php (não versionado)
+// ou na variável de ambiente CHEVETTE_SETUP_KEY.
+$privateConfig = __DIR__ . '/config.local.php';
+if (is_file($privateConfig)) {
+    require_once $privateConfig;
+}
+if (!defined('SETUP_KEY')) {
+    $envKey = getenv('CHEVETTE_SETUP_KEY');
+    define('SETUP_KEY', is_string($envKey) ? $envKey : '');
+}
