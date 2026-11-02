@@ -1,0 +1,5 @@
+<?php
+// Copie este arquivo para config.local.php e defina uma chave privada.
+// Gere uma chave aleatória com pelo menos 32 caracteres.
+// NUNCA publique config.local.php no GitHub.
+define('SETUP_KEY', 'TROQUE-POR-UMA-CHAVE-ALEATORIA-PRIVADA-DE-32-CARACTERES');
