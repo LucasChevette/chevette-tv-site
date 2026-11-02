@@ -1,0 +1,6 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+# Depois de ativar o SSL (cadeado) no InfinityFree, tire o # das 3 linhas abaixo para forçar https:
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

@@ -1,0 +1,35 @@
+CHEVETTE TV - SITE PARA HOSPEDAR (InfinityFree ou qualquer hospedagem com PHP)
+==========================================================================
+
+NÃO PRECISA DE BANCO DE DADOS. Os dados do painel ficam na pasta _data (protegida).
+
+PASSO A PASSO
+1) No InfinityFree, abra o painel da sua hospedagem e entre no "Online File Manager"
+   (ou use FTP, por exemplo com o FileZilla).
+2) Entre na pasta  htdocs  do seu domínio (chevettetv.gt.tc).
+   Apague o arquivo de exemplo (index2.html ou parecido) se existir.
+3) Envie TODOS os arquivos deste pacote para dentro de htdocs, mantendo a pasta _data
+   e o arquivo .htaccess (arquivo que começa com ponto, às vezes fica escondido).
+   Se o gerenciador de arquivos não descompactar o .zip, envie os arquivos um a um
+   ou use FTP.
+4) Abra  https://SEU-SITE/admin.php
+   - Na primeira vez ele pede a "chave de instalação": está dentro do arquivo config.php
+     (linha SETUP_KEY). Crie sua senha (mínimo 10 caracteres).
+5) Depois de entrar, volte para a página inicial: vai aparecer o botão "⚙ ADM"
+   no canto de baixo à esquerda. Edite, clique em Salvar. Vale para todos os visitantes.
+
+SEGURANÇA
+- Só quem tem a senha vê o botão ADM e consegue salvar.
+- A senha fica guardada criptografada. Depois de 5 erros o login trava por 15 minutos.
+- Se esquecer a senha: apague o arquivo _data/auth.php e abra admin.php de novo
+  (vai pedir a chave de instalação do config.php).
+- Guarde o config.php só com você. Não mande este pacote para outras pessoas.
+- Ative o SSL grátis (cadeado) no painel da hospedagem e depois tire o # das linhas
+  do arquivo .htaccess para forçar https.
+- Se a pasta _data não gravar (erro ao salvar), dê permissão 755 (ou 775) na pasta _data.
+
+BACKUP
+- Cada vez que você salva, a versão anterior fica em _data/backup.php.
+
+COMO ALTERAR OS LINKS DOS APPS
+- Painel ADM > Geral > "Link do app Android" e "Link do app PC" (links https do Drive).
