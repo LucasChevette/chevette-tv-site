@@ -1,6 +1,17 @@
 Options -Indexes
-DirectoryIndex index.php index.html
-# Depois de ativar o SSL (cadeado) no InfinityFree, tire o # das 3 linhas abaixo para forçar https:
+DirectoryIndex index.php
+
+# Bloqueia acesso HTTP direto a arquivos internos.
+<FilesMatch "^(config\.php|config\.local\.php|lib\.php)$">
+  Require all denied
+</FilesMatch>
+
+# Bloqueia arquivos de configuração, cópias e arquivos temporários.
+<FilesMatch "(^\.git|\.log$|\.tmp$|\.bak$)">
+  Require all denied
+</FilesMatch>
+
+# Depois de ativar HTTPS na hospedagem, remova os # das três linhas abaixo.
 # RewriteEngine On
 # RewriteCond %{HTTPS} off
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
